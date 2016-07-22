@@ -4,18 +4,20 @@ require File.dirname(__FILE__) + '/lib/bwapi/version'
 Gem::Specification.new do |s|
   s.name        = 'bwapi'
   s.version     = BWAPI::VERSION
-  s.version     = BWAPI::VERSION + ".pre.#{ENV['TRAVIS_BUILD_NUMBER']}" if ENV['TRAVIS']
+  s.version     = BWAPI::VERSION + ".pre.#{ENV['BUILD_NUMBER']}" if ENV['PRE_RELEASE']
   s.date        = Date.today.to_s
   s.summary     = 'Brandwatch API Wrapper'
   s.description = 'A Ruby wrapper for the Brandwatch API'
-  s.author      = 'Jonathan Chrisp'
-  s.email       = 'jonathan@brandwatch.com'
+  s.author      = `git log --all --format='%aN' | sort -u`.split("\n")
+  s.email       = 'automation@brandwatch.com'
   s.license     = 'MIT'
-  s.homepage    = 'https://github.com/jonathanchrisp/bwapi'
-  s.required_ruby_version = '>= 1.9.3'
+  s.homepage    = 'https://github.com/BrandwatchLtd/bwapi'
+  s.required_ruby_version = '>= 2.0.0'
 
   s.add_development_dependency 'rspec', '~> 3.0'
-  s.add_development_dependency 'rubocop', '~> 0.24'
+  s.add_development_dependency 'rubocop', '~> 0.34.2'
+  s.add_development_dependency 'yard', '~> 0.9.0'
+  s.add_development_dependency 'geminabox', '~> 0.13.1'
 
   s.add_runtime_dependency 'allotment', '~> 1.1'
   s.add_runtime_dependency 'faraday', '~> 0.9'

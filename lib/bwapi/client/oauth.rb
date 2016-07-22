@@ -23,7 +23,7 @@ module BWAPI
 
         oauth_request opts
       end
-      alias login oauth_token
+      alias_method :login, :oauth_token
 
       # Refresh a authenticated users oauth_token
       #
@@ -46,7 +46,7 @@ module BWAPI
 
         oauth_request opts
       end
-      alias refresh oauth_refresh_token
+      alias_method :refresh, :oauth_refresh_token
 
       # Determines grant-type used for client
       #

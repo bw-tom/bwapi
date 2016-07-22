@@ -21,7 +21,7 @@ module BWAPI
 
       def on_complete(response)
         key = response[:status].to_i
-        raise ERROR_MAP[key].new(response) if ERROR_MAP.key? key
+        fail ERROR_MAP[key].new(response) if ERROR_MAP.key? key
       end
     end
   end

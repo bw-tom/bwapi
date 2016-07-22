@@ -5,6 +5,7 @@ require 'bwapi/client/projects/data'
 require 'bwapi/client/projects/data_download'
 require 'bwapi/client/projects/demographics'
 require 'bwapi/client/projects/ditto_queries'
+require 'bwapi/client/projects/decahose_queries'
 require 'bwapi/client/projects/facebook_queries'
 require 'bwapi/client/projects/group'
 require 'bwapi/client/projects/instagram_queries'
@@ -12,6 +13,7 @@ require 'bwapi/client/projects/preview_search'
 require 'bwapi/client/projects/queries'
 require 'bwapi/client/projects/query/mentionfind'
 require 'bwapi/client/projects/query_groups'
+require 'bwapi/client/projects/research'
 require 'bwapi/client/projects/rules'
 require 'bwapi/client/projects/sharing'
 require 'bwapi/client/projects/signals'
@@ -109,6 +111,7 @@ module BWAPI
       include BWAPI::Client::Projects::Data
       include BWAPI::Client::Projects::DataDownload
       include BWAPI::Client::Projects::Demographics
+      include BWAPI::Client::Projects::DecahoseQueries
       include BWAPI::Client::Projects::DittoQueries
       include BWAPI::Client::Projects::FacebookQueries
       include BWAPI::Client::Projects::Group
@@ -117,6 +120,7 @@ module BWAPI
       include BWAPI::Client::Projects::Queries
       include BWAPI::Client::Projects::Query::MentionFind
       include BWAPI::Client::Projects::QueryGroups
+      include BWAPI::Client::Projects::Research
       include BWAPI::Client::Projects::Rules
       include BWAPI::Client::Projects::Sharing
       include BWAPI::Client::Projects::Signals
