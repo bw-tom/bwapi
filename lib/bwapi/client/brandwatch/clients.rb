@@ -1,5 +1,4 @@
 require 'bwapi/client/brandwatch/clients/command_center'
-require 'bwapi/client/brandwatch/clients/grant_types'
 require 'bwapi/client/brandwatch/clients/users'
 require 'bwapi/client/brandwatch/clients/modules'
 
@@ -97,7 +96,6 @@ module BWAPI
         end
 
         include BWAPI::Client::Brandwatch::Clients::CommandCenter
-        include BWAPI::Client::Brandwatch::Clients::GrantTypes
         include BWAPI::Client::Brandwatch::Clients::Users
         include BWAPI::Client::Brandwatch::Clients::Modules
       end

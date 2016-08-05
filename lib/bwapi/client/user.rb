@@ -1,7 +1,6 @@
 require 'bwapi/client/user/facebook'
 require 'bwapi/client/user/instagram_credentials'
 require 'bwapi/client/user/notifications'
-require 'bwapi/client/user/tokens'
 require 'bwapi/client/user/twitter_credentials'
 
 module BWAPI
@@ -114,7 +113,6 @@ module BWAPI
       include BWAPI::Client::User::Facebook
       include BWAPI::Client::User::InstagramCredentials
       include BWAPI::Client::User::Notifications
-      include BWAPI::Client::User::Tokens
       include BWAPI::Client::User::TwitterCredentials
     end
   end

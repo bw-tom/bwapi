@@ -6,6 +6,7 @@ require 'bwapi/client/brandwatch/host_location_overrides'
 require 'bwapi/client/brandwatch/log_level'
 require 'bwapi/client/brandwatch/price_structures'
 require 'bwapi/client/brandwatch/usage_report'
+require 'bwapi/client/brandwatch/users'
 
 module BWAPI
   class Client
@@ -59,6 +60,7 @@ module BWAPI
       include BWAPI::Client::Brandwatch::LogLevel
       include BWAPI::Client::Brandwatch::PriceStructures
       include BWAPI::Client::Brandwatch::UsageReport
+      include BWAPI::Client::Brandwatch::Users
     end
   end
 end

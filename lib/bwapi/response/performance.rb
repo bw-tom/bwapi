@@ -18,7 +18,7 @@ module BWAPI
       end
 
       def call(env)
-        @recording = ("#{env.method}#{env.url.path}").tr!('/', '_')
+        @recording = "#{env.method}#{env.url.path}".tr!('/', '_')
         Allotment.start(@recording)
         super
       end

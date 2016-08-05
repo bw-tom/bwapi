@@ -5,13 +5,13 @@ module BWAPI
       module UsageReport
         # Get the Clients Mention Usage report
         #
-        # @param clientId [Integer] Id of client
-        # @param startDate [DateTime] Report startDate
-        # @param endDate [DateTime] Report endDate
+        # @param client_id [Integer] Id of client
+        # @param start_date [DateTime] Report startDate
+        # @param end_date [DateTime] Report endDate
         # @param opts [Hash] options hash of parameters
         # @return [Hash] Returns usage report for active client
-        def brandwatch_usage_report(clientId, startDate, endDate, opts = {})
-          get "brandwatch/usageReport/client/#{clientId}/start/#{startDate}/end/#{endDate}", opts
+        def brandwatch_usage_report(client_id, start_date, end_date, opts = {})
+          get "brandwatch/usageReport/client/#{client_id}/start/#{start_date}/end/#{end_date}", opts
         end
       end
     end

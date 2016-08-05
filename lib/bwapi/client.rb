@@ -24,7 +24,9 @@ require 'bwapi/client/public'
 require 'bwapi/client/query_validation'
 require 'bwapi/client/sso'
 require 'bwapi/client/test_search'
+require 'bwapi/client/usage_summary'
 require 'bwapi/client/user'
+
 require 'faraday'
 
 module BWAPI
@@ -56,6 +58,7 @@ module BWAPI
     include BWAPI::Client::QueryValidation
     include BWAPI::Client::SSO
     include BWAPI::Client::TestSearch
+    include BWAPI::Client::UsageSummary
     include BWAPI::Client::User
 
     # Initializes Client

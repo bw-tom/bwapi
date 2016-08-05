@@ -5,12 +5,15 @@ require 'bwapi/client/projects/data'
 require 'bwapi/client/projects/data_download'
 require 'bwapi/client/projects/demographics'
 require 'bwapi/client/projects/ditto_queries'
+require 'bwapi/client/projects/decahose_queries'
 require 'bwapi/client/projects/facebook_queries'
 require 'bwapi/client/projects/group'
+require 'bwapi/client/projects/instagram_queries'
 require 'bwapi/client/projects/preview_search'
 require 'bwapi/client/projects/queries'
 require 'bwapi/client/projects/query/mentionfind'
 require 'bwapi/client/projects/query_groups'
+require 'bwapi/client/projects/research'
 require 'bwapi/client/projects/rules'
 require 'bwapi/client/projects/sharing'
 require 'bwapi/client/projects/signals'
@@ -84,11 +87,15 @@ module BWAPI
         delete "projects/#{project_id}"
       end
 
-      # Given a query id retrieve the twitter audience csv associated with said query
+      # Copy Published Projects into current user account
       #
-      # TODO: Add parameters documentation
-      def project_audiences(project_id, opts = {})
-        get "/projects/#{project_id}/audiences", opts
+      # @param project_id [Integer] Id of project
+      # @param opts [Hash] options hash of parameters
+      # @option opts [Hash] structureOnly should copy only the structure (no backfills)
+      # backfills should be run reperatly
+      # @return [Hash] Copied project
+      def copy_project(project_id, opts = {})
+        post "projects/#{project_id}/copy", opts
       end
 
       # Given a query id retrieve summary statistics for the given Twitter audience
@@ -104,13 +111,16 @@ module BWAPI
       include BWAPI::Client::Projects::Data
       include BWAPI::Client::Projects::DataDownload
       include BWAPI::Client::Projects::Demographics
+      include BWAPI::Client::Projects::DecahoseQueries
       include BWAPI::Client::Projects::DittoQueries
       include BWAPI::Client::Projects::FacebookQueries
       include BWAPI::Client::Projects::Group
+      include BWAPI::Client::Projects::InstagramQueries
       include BWAPI::Client::Projects::PreviewSearch
       include BWAPI::Client::Projects::Queries
       include BWAPI::Client::Projects::Query::MentionFind
       include BWAPI::Client::Projects::QueryGroups
+      include BWAPI::Client::Projects::Research
       include BWAPI::Client::Projects::Rules
       include BWAPI::Client::Projects::Sharing
       include BWAPI::Client::Projects::Signals

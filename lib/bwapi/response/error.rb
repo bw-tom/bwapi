@@ -17,7 +17,7 @@ module BWAPI
         501 => BWAPI::NotImplemented,
         502 => BWAPI::BadGateway,
         503 => BWAPI::ServiceUnavailable
-      }
+      }.freeze
 
       def on_complete(response)
         key = response[:status].to_i

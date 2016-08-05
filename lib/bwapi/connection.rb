@@ -25,6 +25,8 @@ module BWAPI
       opts[:headers][:authorization] = "bearer #{@access_token}" if @access_token
       opts[:builder]                 = middleware
       opts[:ssl]                     = { verify: @verify_ssl }
+      opts[:request][:timeout]       = @timeout
+      opts[:request][:open_timeout]  = @open_timeout
       opts[:url]                     = @api_endpoint
       opts
     end

@@ -1,4 +1,3 @@
-require 'bwapi/client/client/grant_types'
 require 'bwapi/client/client/pricing_options'
 require 'bwapi/client/client/sub_clients'
 
@@ -41,7 +40,6 @@ module BWAPI
         get '/client/usage'
       end
 
-      include BWAPI::Client::Client::GrantTypes
       include BWAPI::Client::Client::PricingOptions
       include BWAPI::Client::Client::SubClients
     end
