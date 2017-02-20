@@ -16,5 +16,10 @@ AccessorMethodName:
 RaiseArgs:
   Enabled: false
 
+Metrics/BlockLength:
+  Exclude:
+      - 'spec/**/*'
+      - '*.gemspec'
+
 Encoding:
   EnforcedStyle: when_needed

@@ -82,7 +82,7 @@ module BWAPI
     #
     # @return [Boolean] Authenticated status
     def authenticated?
-      (@access_token && !access_token_expired?) ? true : false
+      @access_token && !access_token_expired? ? true : false
     end
 
     # Check if user is a brandwatch-application-client type
