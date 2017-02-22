@@ -14,10 +14,11 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/BrandwatchLtd/bwapi'
   s.required_ruby_version = '>= 2.0.0'
 
+  s.add_development_dependency 'rake', '~> 12.0'
   s.add_development_dependency 'rspec', '~> 3.0'
-  s.add_development_dependency 'rubocop', '~> 0.34.2'
+  s.add_development_dependency 'rubocop', '~> 0.38'
   s.add_development_dependency 'yard', '~> 0.9.0'
-  s.add_development_dependency 'geminabox', '~> 0.13.1'
+  s.add_development_dependency 'geminabox', '~> 0.13'
 
   s.add_runtime_dependency 'allotment', '~> 1.1'
   s.add_runtime_dependency 'faraday', '~> 0.9'
