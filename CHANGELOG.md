@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 13.3.0
+* Added retry failed connection for requests
+* Fixed minor Rubocop error in configuration
+
 ## 12.0.0
 ### Added
 * NoTask - Added ditto endpoint
