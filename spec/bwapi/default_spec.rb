@@ -40,6 +40,7 @@ describe BWAPI::Default do
             params_encoder: Faraday::FlatParamsEncoder
           }
         },
+        connection_attempts: 1,
         debug: false,
         grant_type: 'api-password',
         logger: nil,
@@ -136,6 +137,19 @@ describe BWAPI::Default do
           params_encoder: Faraday::FlatParamsEncoder
         }
       )
+    end
+  end
+
+  describe '.connection_attempts' do
+    after { ENV['BWAPI_CONNECTION_ATTEMPTS'] = nil }
+
+    it 'should return 1 as default' do
+      expect(BWAPI::Default.connection_attempts).to eql(1)
+    end
+
+    it 'should return the correct value when the environment variable is set' do
+      ENV['BWAPI_CONNECTION_ATTEMPTS'] = '3'
+      expect(BWAPI::Default.connection_attempts).to eql(3)
     end
   end
 

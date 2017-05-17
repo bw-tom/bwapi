@@ -238,6 +238,7 @@ describe BWAPI::Configuration do
           :client_id,
           :client_secret,
           :connection_options,
+          :connection_attempts,
           :debug,
           :grant_type,
           :logger,
@@ -514,6 +515,7 @@ describe BWAPI::Configuration do
             params_encoder: Faraday::FlatParamsEncoder
           }
         },
+        connection_attempts: 1,
         debug: false,
         grant_type: 'api-password',
         logger: nil,

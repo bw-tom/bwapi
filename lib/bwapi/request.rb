@@ -57,12 +57,12 @@ module BWAPI
     # @param opts [Hash] Request parameters
     # @return [Hash] Response
     def request(method, path, opts = {})
-      retries ||= 0
+      tries ||= 0
       send_request(method, path, opts)
     rescue Faraday::ConnectionFailed => e
       warn "Faraday failed to connect with the error: #{e.message}"
-      raise e unless (retries += 1) < 3
-      warn "Reseting and retrying. Retry: #{retries}"
+      raise e unless (tries += 1) < connection_attempts
+      warn "Resetting and retrying. Retry: #{tries}"
       reset_connection
       retry
     end
