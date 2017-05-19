@@ -3,32 +3,33 @@ module BWAPI
   module Configuration
     attr_accessor :access_token, :access_token_expiry, :adapter, :api_endpoint, :client_id, :debug,
                   :grant_type, :logger, :open_timeout, :performance, :refresh_token, :timeout,
-                  :user_agent, :username, :verify_ssl
+                  :user_agent, :username, :verify_ssl, :connection_attempts
 
     attr_writer :client_secret, :password
 
     class << self
       # Configuration keys
       def keys
-        @keys ||= [
-          :access_token,
-          :access_token_expiry,
-          :adapter,
-          :api_endpoint,
-          :client_id,
-          :client_secret,
-          :connection_options,
-          :debug,
-          :grant_type,
-          :logger,
-          :open_timeout,
-          :password,
-          :performance,
-          :refresh_token,
-          :timeout,
-          :user_agent,
-          :username,
-          :verify_ssl
+        @keys ||= %i[
+          access_token
+          access_token_expiry
+          adapter
+          api_endpoint
+          client_id
+          client_secret
+          connection_options
+          connection_attempts
+          debug
+          grant_type
+          logger
+          open_timeout
+          password
+          performance
+          refresh_token
+          timeout
+          user_agent
+          username
+          verify_ssl
         ]
       end
     end

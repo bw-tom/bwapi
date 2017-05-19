@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.email       = 'automation@brandwatch.com'
   s.license     = 'MIT'
   s.homepage    = 'https://github.com/BrandwatchLtd/bwapi'
-  s.required_ruby_version = '>= 2.0.0'
+  s.required_ruby_version = '>= 2.3.0'
 
   s.add_development_dependency 'rake', '~> 12.0'
   s.add_development_dependency 'rspec', '~> 3.0'

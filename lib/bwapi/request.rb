@@ -57,6 +57,23 @@ module BWAPI
     # @param opts [Hash] Request parameters
     # @return [Hash] Response
     def request(method, path, opts = {})
+      tries ||= 0
+      send_request(method, path, opts)
+    rescue Faraday::ConnectionFailed => e
+      warn "Faraday failed to connect with the error: #{e.message}"
+      raise e unless (tries += 1) < connection_attempts
+      warn "Resetting and retrying. Retry: #{tries}"
+      reset_connection
+      retry
+    end
+
+    # Send the request to the connection object
+    #
+    # @param method [String] Type of request
+    # @param path [String] URL path to send request
+    # @param opts [Hash] Request parameters
+    # @return [Hash] Response
+    def send_request(method, path, opts)
       connection.send(method) do |req|
         case method
         when :get
