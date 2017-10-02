@@ -10,7 +10,7 @@ module BWAPI
     class << self
       # Configuration keys
       def keys
-        @keys ||= %i[
+        @keys ||= %i(
           access_token
           access_token_expiry
           adapter
@@ -30,7 +30,7 @@ module BWAPI
           user_agent
           username
           verify_ssl
-        ]
+        )
       end
     end
 
