@@ -26,7 +26,8 @@ describe BWAPI::Request do
       it 'should raise the error when tries not configured' do
         expect(connection).to receive(:get).and_yield(request).and_raise(Faraday::ConnectionFailed, 'error').once
         expect(request).to receive(:url).with('/ping', {}).once
-        expect { subject.get('/ping') }.to raise_exception(Faraday::ConnectionFailed, 'error').and output("Faraday failed to connect with the error: error\n").to_stderr
+        expect { subject.get('/ping') }.to raise_exception(Faraday::ConnectionFailed, 'error')
+          .and output("Faraday failed to connect with the error: error\n").to_stderr
       end
 
       it 'should not raise the error when tries configured' do

@@ -23,6 +23,17 @@ module BWAPI
         get 'admin/activequeries', opts
       end
 
+      # Get the active facebook channels irrespective of project
+      #
+      # @param opts [Hash] options hash of parameters
+      # @option opts [Integer] page Page of projects to retrieve
+      # @option opts [Integer] pageSize Results per page of results
+      # @option opts [Integer] sortBy Filter to sort queries by
+      # @return [Hash] All active facebook channels
+      def admin_facebookchannels(opts = {})
+        get 'admin/facebookchannels', opts
+      end
+
       # Get the project report of sharing details
       #
       # @return [Hash] Project sharing report
