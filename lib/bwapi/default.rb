@@ -62,7 +62,7 @@ module BWAPI
       end
 
       def debug
-        ENV['BWAPI_DEBUG'] == 'true' ? true : false
+        ENV['BWAPI_DEBUG'] == 'true'
       end
 
       def grant_type
@@ -102,7 +102,7 @@ module BWAPI
       end
 
       def verify_ssl
-        ENV['BWAPI_VERIFY_SSL'] == 'true' ? true : false
+        ENV['BWAPI_VERIFY_SSL'] == 'true'
       end
     end
   end
