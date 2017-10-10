@@ -14,7 +14,7 @@ module BWAPI
     end
 
     # Check BWAPI::Client.new responds
-    def respond_to?(method_name, include_private = false)
+    def respond_to_missing?(method_name, include_private = false)
       new.respond_to?(method_name, include_private) || super
     end
 

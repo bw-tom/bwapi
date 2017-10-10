@@ -57,6 +57,10 @@ module BWAPI
         }
       end
 
+      def connection_attempts
+        ENV['BWAPI_CONNECTION_ATTEMPTS'] ? ENV['BWAPI_CONNECTION_ATTEMPTS'].to_i : 1
+      end
+
       def debug
         ENV['BWAPI_DEBUG'] == 'true'
       end

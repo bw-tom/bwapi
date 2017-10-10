@@ -407,7 +407,7 @@ describe BWAPI::Configuration do
     end
 
     it 'should reset the user_agent value' do
-      expect(bwapi.user_agent).to eql('BWAPI Ruby Gem 13.0.0')
+      expect(bwapi.user_agent).to eql('BWAPI Ruby Gem 13.3.0')
     end
 
     it 'should reset the username value' do
@@ -508,12 +508,13 @@ describe BWAPI::Configuration do
         client_secret: nil,
         connection_options: {
           headers: {
-            user_agent: 'BWAPI Ruby Gem 13.0.0'
+            user_agent: 'BWAPI Ruby Gem 13.3.0'
           },
           request: {
             params_encoder: Faraday::FlatParamsEncoder
           }
         },
+        connection_attempts: 1,
         debug: false,
         grant_type: 'api-password',
         logger: nil,
@@ -522,7 +523,7 @@ describe BWAPI::Configuration do
         performance: {},
         refresh_token: nil,
         timeout: 60,
-        user_agent: 'BWAPI Ruby Gem 13.0.0',
+        user_agent: 'BWAPI Ruby Gem 13.3.0',
         username: nil,
         verify_ssl: false
       )
