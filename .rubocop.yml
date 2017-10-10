@@ -1,8 +1,16 @@
 # See full list of defaults here: https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 # To see all cops used see here: https://github.com/bbatsov/rubocop/blob/master/config/enabled.yml
+AllCops:
+  Exclude:
+    - 'lib/bwapi/client.rb'
+    - 'lib/bwapi/configuration.rb'
+    - 'lib/bwapi.rb'
+
+Metrics/BlockLength:
+  Max: 500
 
 LineLength:
-  Max: 150
+  Max: 200
 
 MethodLength:
   Max: 30
@@ -16,5 +24,13 @@ AccessorMethodName:
 RaiseArgs:
   Enabled: false
 
+Metrics/BlockLength:
+  Exclude:
+      - 'spec/**/*'
+      - '*.gemspec'
+
 Encoding:
   EnforcedStyle: when_needed
+
+Documentation:
+  Enabled: false

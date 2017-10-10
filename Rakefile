@@ -5,7 +5,7 @@ Bundler.setup
 require 'yard'
 YARD::Rake::YardocTask.new do |t|
   t.files = ['lib/**/*.rb', 'lib/**/**/*.rb']
-  t.options = %w(--list-undoc)
+  t.options = %w[--list-undoc]
 end
 
 require 'rubocop/rake_task'
@@ -38,7 +38,7 @@ end
 
 desc 'Running rubocop'
 task :rubocop do
-  %w(rubocop)
+  %w[rubocop]
 end
 
 desc 'Runing rspec for the project'
@@ -46,4 +46,4 @@ task :spec do
   system 'rspec'
 end
 
-task default: %w(rubocop spec)
+task default: %w[rubocop spec]
