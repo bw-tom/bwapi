@@ -7,8 +7,8 @@ module BWAPI
         #
         # @param project_id [Integer] Id of project
         # @return [Hash] All facebook channels in project
-        def facebook_channels(project_id)
-          get "projects/#{project_id}/facebookchannels"
+        def facebook_channels(project_id, opts = {})
+          get "projects/#{project_id}/facebookchannels", opts
         end
 
         # Get a specific facebook channel in a project
