@@ -49,8 +49,8 @@ module BWAPI
         # @option opts [String] type Type of channel
         # @option opts [String] instagramAccessToken Instagram access tocken
         # @return [Hash] New Instagram channel
-        def create_instagram_channel(project_id, opts = {})
-          post "projects/#{project_id}/instagramqueries", opts
+        def create_instagram_channel(project_id, opts = {}, params = {})
+          post "projects/#{project_id}/instagramqueries", opts, params
         end
 
         # Update an existing Instagram channels in a project
@@ -81,8 +81,8 @@ module BWAPI
         # @option opts [String] twitterScreenName Tracked Twitter screenname
         # @option opts [String] type Type of channel
         # @return [Hash] Updated instagram channel
-        def update_instagram_channel(project_id, query_id, opts = {})
-          put "projects/#{project_id}/instagramqueries/#{query_id}", opts
+        def update_instagram_channel(project_id, query_id, opts = {}, params = {})
+          put "projects/#{project_id}/instagramqueries/#{query_id}", opts, params
         end
 
         # Delete an Instagram channel

@@ -44,8 +44,8 @@ module BWAPI
         # @option opts [String] twitterLimit Twitter limit
         # @option opts [String] twitterScreenName Twitter screen name
         # @return [Hash] New twitter query
-        def create_twitter_query(project_id, opts = {})
-          post "projects/#{project_id}/twitterqueries", opts
+        def create_twitter_query(project_id, opts = {}, params = {})
+          post "projects/#{project_id}/twitterqueries", opts, params
         end
 
         # Update an existing twitter query in a project
