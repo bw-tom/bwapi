@@ -22,6 +22,7 @@ require 'bwapi/client/projects/stream_dashboards'
 require 'bwapi/client/projects/summary'
 require 'bwapi/client/projects/tags'
 require 'bwapi/client/projects/twitter_queries'
+require 'bwapi/client/projects/usage_summary'
 require 'bwapi/client/projects/users'
 require 'bwapi/client/projects/workflow'
 
@@ -130,6 +131,7 @@ module BWAPI
       include BWAPI::Client::Projects::Summary
       include BWAPI::Client::Projects::Tags
       include BWAPI::Client::Projects::TwitterQueries
+      include BWAPI::Client::Projects::UsageSummary
       include BWAPI::Client::Projects::Users
       include BWAPI::Client::Projects::Workflow
     end
