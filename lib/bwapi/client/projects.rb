@@ -107,6 +107,10 @@ module BWAPI
         get "/projects/#{project_id}/twitteraudiencesummary", opts
       end
 
+      def copy_project_estimation(project_id)
+        get "/projects/#{project_id}/copy/usageestimate"
+      end
+
       include BWAPI::Client::Projects::Alerts
       include BWAPI::Client::Projects::BulkActions
       include BWAPI::Client::Projects::Categories
