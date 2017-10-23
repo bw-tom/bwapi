@@ -29,8 +29,5 @@ Metrics/BlockLength:
       - 'spec/**/*'
       - '*.gemspec'
 
-Encoding:
-  EnforcedStyle: when_needed
-
 Documentation:
   Enabled: false
