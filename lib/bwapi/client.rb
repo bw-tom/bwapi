@@ -19,6 +19,7 @@ require 'bwapi/client/me'
 require 'bwapi/client/metrics'
 require 'bwapi/client/oauth'
 require 'bwapi/client/ping'
+require 'bwapi/client/pricing'
 require 'bwapi/client/projects'
 require 'bwapi/client/public'
 require 'bwapi/client/query_validation'
@@ -53,6 +54,7 @@ module BWAPI
     include BWAPI::Client::Metrics
     include BWAPI::Client::OAuth
     include BWAPI::Client::Ping
+    include BWAPI::Client::Pricing
     include BWAPI::Client::Projects
     include BWAPI::Client::Public
     include BWAPI::Client::QueryValidation

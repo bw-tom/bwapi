@@ -22,6 +22,7 @@ require 'bwapi/client/projects/stream_dashboards'
 require 'bwapi/client/projects/summary'
 require 'bwapi/client/projects/tags'
 require 'bwapi/client/projects/twitter_queries'
+require 'bwapi/client/projects/usage_summary'
 require 'bwapi/client/projects/users'
 require 'bwapi/client/projects/workflow'
 
@@ -106,6 +107,10 @@ module BWAPI
         get "/projects/#{project_id}/twitteraudiencesummary", opts
       end
 
+      def copy_project_estimation(project_id)
+        get "/projects/#{project_id}/copy/usageestimate"
+      end
+
       include BWAPI::Client::Projects::Alerts
       include BWAPI::Client::Projects::BulkActions
       include BWAPI::Client::Projects::Categories
@@ -130,6 +135,7 @@ module BWAPI
       include BWAPI::Client::Projects::Summary
       include BWAPI::Client::Projects::Tags
       include BWAPI::Client::Projects::TwitterQueries
+      include BWAPI::Client::Projects::UsageSummary
       include BWAPI::Client::Projects::Users
       include BWAPI::Client::Projects::Workflow
     end
